@@ -9,6 +9,7 @@
 import argparse
 
 def count_word_in_file(v, file_contents, word):
+	# NOTE: args.verbose is not in scope for this function, thus we need to pass this in as a parameter.
 	if v:
 		print("Looking for keyword:  ", str(word))
 	return file_contents.count(word)
