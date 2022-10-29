@@ -11,8 +11,8 @@ import argparse
 def count_word_in_file(file_contents, word):
 	if args.verbose:
 		print("Looking for keyword:  ", str(word))
-	word_count = file_contents.count(word)
-	print("Found", word_count, "instances of the word:", word)
+	return file_contents.count(word)
+	
 
 #create ArgumentParser object.
 parser = argparse.ArgumentParser(description='File keyword frequency searcher')
@@ -40,7 +40,8 @@ try:
 		
 		# count each keyword in the file.
 		for x in args.keyword:
-			count_word_in_file(contents, x)
+			#count_word_in_file(contents, x)
+			print("Found", count_word_in_file(contents, x), "instances of the word:", x)
 
 		# Done, close the file
 		f_obj.close()
